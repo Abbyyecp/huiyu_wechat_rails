@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'categories#index'
+  root 'categories#new'
 
   get "yy" => "welcome#yy"
 
 
-  resources :categories do
-    member do
-      post :update_column
-    end
-  end
-  resources :products
+  resources :categories
 end
